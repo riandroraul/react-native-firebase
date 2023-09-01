@@ -1,9 +1,9 @@
-import {View, Text, Image, TouchableOpacity, Pressable} from 'react-native';
-import {useEffect, useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import COLORS from '../Constants/color';
-import TextinputComp2 from '../Components/TextinputComp2';
-// import CheckBox from '@react-native-community/checkbox';
+import {View, Text, Image, TouchableOpacity, Pressable} from "react-native";
+import {useEffect, useState} from "react";
+import {SafeAreaView} from "react-native-safe-area-context";
+import COLORS from "../Constants/color";
+import TextinputComp2 from "../Components/TextinputComp2";
+import CheckBox from "@react-native-community/checkbox";
 
 const Login = ({navigation}) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -13,7 +13,7 @@ const Login = ({navigation}) => {
         <Text
           style={{
             fontSize: 22,
-            fontWeight: 'bold',
+            fontWeight: "bold",
             marginVertical: 12,
             color: COLORS.black,
           }}>
@@ -32,23 +32,23 @@ const Login = ({navigation}) => {
           placeholder="Enter your password"
           password={true}
         />
-        <View style={{flexDirection: 'row', marginVertical: 6}}>
-          {/* <CheckBox
+        <View style={{flexDirection: "row", marginVertical: 6}}>
+          <CheckBox
             style={{marginRight: 8}}
             value={isChecked}
             onValueChange={setIsChecked}
             color={isChecked ? COLORS.primary : undefined}
-          /> */}
-          <Text>Remember Me</Text>
+          />
+          <Text style={{marginTop: 6}}>Remember Me</Text>
         </View>
         <View
           style={{
-            width: '100%',
+            width: "100%",
             height: 48,
             borderWidth: 1,
             borderRadius: 8,
-            alignItems: 'center',
-            justifyContent: 'center',
+            alignItems: "center",
+            justifyContent: "center",
             paddingLeft: 22,
             backgroundColor: COLORS.primary,
             marginTop: 18,
@@ -58,8 +58,8 @@ const Login = ({navigation}) => {
             <Text
               style={{
                 color: COLORS.white,
-                fontWeight: 'bold',
-                textAlign: 'center',
+                fontWeight: "bold",
+                textAlign: "center",
                 fontSize: 18,
               }}>
               Login
@@ -68,8 +68,8 @@ const Login = ({navigation}) => {
         </View>
         <View
           style={{
-            flexDirection: 'row',
-            alignItems: 'center',
+            flexDirection: "row",
+            alignItems: "center",
             marginVertical: 20,
           }}>
           <View
@@ -90,14 +90,14 @@ const Login = ({navigation}) => {
             }}
           />
         </View>
-        <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+        <View style={{flexDirection: "row", justifyContent: "center"}}>
           <TouchableOpacity
-            onPress={() => console.log('login with facebook')}
+            onPress={() => console.log("login with facebook")}
             style={{
               flex: 1,
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexDirection: 'row',
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "row",
               height: 52,
               borderWidth: 1,
               borderColor: COLORS.grey,
@@ -105,20 +105,20 @@ const Login = ({navigation}) => {
               borderRadius: 10,
             }}>
             <Image
-              source={require('../Assets/image/logo-fb.png')}
+              source={require("../Assets/image/logo-fb.png")}
               style={{height: 36, width: 36, marginRight: 8}}
               resizeMode="contain"
             />
             <Text>Facebook</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            disabled={!request}
-            onPress={() => promptAsync()}
+            // disabled={!request}
+            // onPress={() => promptAsync()}
             style={{
               flex: 1,
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexDirection: 'row',
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "row",
               height: 52,
               borderWidth: 1,
               borderColor: COLORS.grey,
@@ -126,7 +126,7 @@ const Login = ({navigation}) => {
               borderRadius: 10,
             }}>
             <Image
-              source={require('../Assets/image/logo-google.png')}
+              source={require("../Assets/image/logo-google.png")}
               style={{height: 36, width: 36, marginRight: 8}}
               resizeMode="contain"
             />
@@ -135,18 +135,18 @@ const Login = ({navigation}) => {
         </View>
         <View
           style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
+            flexDirection: "row",
+            justifyContent: "center",
             marginVertical: 22,
           }}>
-          <Text style={{fontSize: 16, color: COLORS.black, fontWeight: 'bold'}}>
+          <Text style={{fontSize: 16, color: COLORS.black, fontWeight: "bold"}}>
             Don't have an account ?
           </Text>
-          <Pressable onPress={() => navigation.navigate('Signup')}>
+          <Pressable onPress={() => navigation.navigate("Signup")}>
             <Text
               style={{
                 fontSize: 16,
-                fontWeight: 'bold',
+                fontWeight: "bold",
                 marginLeft: 6,
                 color: COLORS.primary,
               }}>

@@ -5,12 +5,12 @@ import {
   TouchableOpacity,
   Pressable,
   ScrollView,
-} from 'react-native';
-import {useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import COLORS from '../Constants/color';
-import TextinputComp2 from '../Components/TextinputComp2';
-// import Checkbox from 'expo-checkbox';
+} from "react-native";
+import {useState} from "react";
+import {SafeAreaView} from "react-native-safe-area-context";
+import COLORS from "../Constants/color";
+import TextinputComp2 from "../Components/TextinputComp2";
+import CheckBox from "@react-native-community/checkbox";
 
 const Signup = ({navigation}) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -21,7 +21,7 @@ const Signup = ({navigation}) => {
           <Text
             style={{
               fontSize: 22,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               marginVertical: 12,
               color: COLORS.black,
             }}>
@@ -41,23 +41,25 @@ const Signup = ({navigation}) => {
             placeholder="Enter your password"
             password={true}
           />
-          <View style={{flexDirection: 'row', marginVertical: 6}}>
-            {/* <Checkbox
-            style={{marginRight: 8}}
-            value={isChecked}
-            onValueChange={setIsChecked}
-            color={isChecked ? COLORS.primary : undefined}
-          /> */}
-            <Text>I aggree to the term and conditions</Text>
+          <View style={{flexDirection: "row", marginVertical: 6}}>
+            <CheckBox
+              style={{marginRight: 8}}
+              value={isChecked}
+              onValueChange={setIsChecked}
+              color={isChecked ? COLORS.primary : undefined}
+            />
+            <Text style={{marginTop: 6}}>
+              I aggree to the term and conditions
+            </Text>
           </View>
           <View
             style={{
-              width: '100%',
+              width: "100%",
               height: 48,
               borderWidth: 1,
               borderRadius: 8,
-              alignItems: 'center',
-              justifyContent: 'center',
+              alignItems: "center",
+              justifyContent: "center",
               paddingLeft: 22,
               backgroundColor: COLORS.primary,
               marginTop: 18,
@@ -67,8 +69,8 @@ const Signup = ({navigation}) => {
               <Text
                 style={{
                   color: COLORS.white,
-                  fontWeight: 'bold',
-                  textAlign: 'center',
+                  fontWeight: "bold",
+                  textAlign: "center",
                   fontSize: 18,
                 }}>
                 Sign Up
@@ -77,8 +79,8 @@ const Signup = ({navigation}) => {
           </View>
           <View
             style={{
-              flexDirection: 'row',
-              alignItems: 'center',
+              flexDirection: "row",
+              alignItems: "center",
               marginVertical: 20,
             }}>
             <View
@@ -99,14 +101,14 @@ const Signup = ({navigation}) => {
               }}
             />
           </View>
-          <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+          <View style={{flexDirection: "row", justifyContent: "center"}}>
             <TouchableOpacity
-              onPress={() => console.log('login with facebook')}
+              onPress={() => console.log("login with facebook")}
               style={{
                 flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'row',
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "row",
                 height: 52,
                 borderWidth: 1,
                 borderColor: COLORS.grey,
@@ -114,19 +116,19 @@ const Signup = ({navigation}) => {
                 borderRadius: 10,
               }}>
               <Image
-                source={require('../Assets/image/logo-fb.png')}
+                source={require("../Assets/image/logo-fb.png")}
                 style={{height: 36, width: 36, marginRight: 8}}
                 resizeMode="contain"
               />
               <Text>Facebook</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => console.log('login with google')}
+              onPress={() => console.log("login with google")}
               style={{
                 flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'row',
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "row",
                 height: 52,
                 borderWidth: 1,
                 borderColor: COLORS.grey,
@@ -134,7 +136,7 @@ const Signup = ({navigation}) => {
                 borderRadius: 10,
               }}>
               <Image
-                source={require('../Assets/image/logo-google.png')}
+                source={require("../Assets/image/logo-google.png")}
                 style={{height: 36, width: 36, marginRight: 8}}
                 resizeMode="contain"
               />
@@ -143,19 +145,19 @@ const Signup = ({navigation}) => {
           </View>
           <View
             style={{
-              flexDirection: 'row',
-              justifyContent: 'center',
+              flexDirection: "row",
+              justifyContent: "center",
               marginVertical: 22,
             }}>
             <Text
-              style={{fontSize: 16, color: COLORS.black, fontWeight: 'bold'}}>
+              style={{fontSize: 16, color: COLORS.black, fontWeight: "bold"}}>
               Already have an account
             </Text>
-            <Pressable onPress={() => navigation.navigate('Login')}>
+            <Pressable onPress={() => navigation.navigate("Login")}>
               <Text
                 style={{
                   fontSize: 16,
-                  fontWeight: 'bold',
+                  fontWeight: "bold",
                   marginLeft: 6,
                   color: COLORS.primary,
                 }}>
