@@ -10,7 +10,8 @@ import {useState} from "react";
 import {SafeAreaView} from "react-native-safe-area-context";
 import COLORS from "../Constants/color";
 import TextinputComp2 from "../Components/TextinputComp2";
-import CheckBox from "@react-native-community/checkbox";
+// import CheckBox from "@react-native-community/checkbox";
+import {signInWithGoogle} from "../Config/firebase/Google";
 
 const Signup = ({navigation}) => {
   const [isChecked, setIsChecked] = useState(false);
@@ -42,12 +43,12 @@ const Signup = ({navigation}) => {
             password={true}
           />
           <View style={{flexDirection: "row", marginVertical: 6}}>
-            <CheckBox
+            {/* <CheckBox
               style={{marginRight: 8}}
               value={isChecked}
               onValueChange={setIsChecked}
               color={isChecked ? COLORS.primary : undefined}
-            />
+            /> */}
             <Text style={{marginTop: 6}}>
               I aggree to the term and conditions
             </Text>
@@ -123,7 +124,7 @@ const Signup = ({navigation}) => {
               <Text>Facebook</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => console.log("login with google")}
+              onPress={signInWithGoogle}
               style={{
                 flex: 1,
                 alignItems: "center",

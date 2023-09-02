@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1050853742576",
+    "project_id": "react-native-cli-ac569",
+    "storage_bucket": "react-native-cli-ac569.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050853742576:android:653a847978d238b621ef35",
+        "android_client_info": {
+          "package_name": "com.perpusapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050853742576-dig0u85399u80oj4169237ik3veqvqjr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.perpusapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1050853742576-40dk38u5h4o4vrptrcq8s4e2vbv6e1k1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8XhVJTG7OTGm459XdAoHeAD8aAGA9SOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050853742576-40dk38u5h4o4vrptrcq8s4e2vbv6e1k1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
