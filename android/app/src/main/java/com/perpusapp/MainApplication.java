@@ -9,6 +9,7 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
 import java.util.List;
+// import com.facebook.reactnative.androidsdk.FBSDKPackage;
 // import com.reactnativecommunity.checkbox.ReactCheckBoxPackage;
 // import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 
@@ -26,7 +27,8 @@ public class MainApplication extends Application implements ReactApplication {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
-          // packages.add(new MyReactNativePackage());
+          // packages.add( new MainReactPackage());
+          // packages.add( new FBSDKPackage());
           // packages.add(new MainReactPackage());
           // packages.add(new ReactCheckBoxPackage())
           // packages.add(new ReactNativeFirebaseAppPackage())

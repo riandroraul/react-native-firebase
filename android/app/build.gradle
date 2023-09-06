@@ -114,6 +114,8 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+    // implementation project(':react-native-fbsdk-next')
+    implementation 'com.facebook.android:facebook-android-sdk:12.1.0'
     // implementation project(':react-native-community-checkbox')
     // implementation project(path: ":@react-native-firebase_app")
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")

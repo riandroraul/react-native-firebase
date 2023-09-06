@@ -1,7 +1,9 @@
 import {GoogleSignin} from "@react-native-google-signin/google-signin";
 import auth from "@react-native-firebase/auth";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {StackActions} from "@react-navigation/native";
 
-export const signInWithGoogle = async () => {
+export const signInWithGoogle = async (navigation, setData) => {
   try {
     GoogleSignin.configure({
       offlineAccess: false,
@@ -18,11 +20,14 @@ export const signInWithGoogle = async () => {
     // Sign-in the user with the credential
     const authUser = await auth().signInWithCredential(googleCredential);
     const userInfo = GoogleSignin.signIn();
-    console.log(21, authUser);
 
+    console.log(authUser.additionalUserInfo.profile);
+    navigation.dispatch(StackActions.replace("GoogleUserProfile"));
+    console.log(21, userInfo);
+    setData(authUser.additionalUserInfo.profile);
     return userInfo;
   } catch (error) {
-    console.log(error);
+    console.log(error, error.code);
   }
 };
 
@@ -31,6 +36,7 @@ export const signOutGoogle = async () => {
     const revokeAccess = await GoogleSignin.revokeAccess();
     const logout = await GoogleSignin.signOut();
     console.log(revokeAccess);
+    console.log(logout);
     return logout;
   } catch (err) {
     console.log(err);

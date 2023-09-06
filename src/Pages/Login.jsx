@@ -12,8 +12,15 @@ import COLORS from "../Constants/color";
 import TextinputComp2 from "../Components/TextinputComp2";
 // import CheckBox from "@react-native-community/checkbox";
 import {signInWithGoogle} from "../Config/firebase/Google";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Login = ({navigation}) => {
+  // useEffect(() => {
+  //   AsyncStorage.getItem("googleSignIn", (err, val) => {
+  //     console.log("getItem : ", val);
+  //   });
+  // }, []);
+
   const [isChecked, setIsChecked] = useState(false);
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
@@ -122,7 +129,7 @@ const Login = ({navigation}) => {
             </TouchableOpacity>
             <TouchableOpacity
               // disabled={!request}
-              // onPress={signInWithGoogle}
+              onPress={signInWithGoogle}
               style={{
                 flex: 1,
                 alignItems: "center",
