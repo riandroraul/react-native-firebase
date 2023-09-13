@@ -17,6 +17,7 @@ import axios from "axios";
 import {StackActions} from "@react-navigation/native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {UserContext} from "../Context/User";
+import PhoneSignIn from "../Components/PhoneSignIn";
 
 const Signup = ({navigation}) => {
   const context = useContext(UserContext);
@@ -195,6 +196,28 @@ const Signup = ({navigation}) => {
             {/* <TouchableOpacity onPress={signOutGoogle}>
               <Text>Sign Out Google</Text>
             </TouchableOpacity> */}
+          </View>
+          <View style={{flexDirection: "row", justifyContent: "center"}}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("PhoneSignIn")}
+              style={{
+                flex: 1,
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "row",
+                height: 52,
+                borderWidth: 1,
+                borderColor: COLORS.grey,
+                marginRight: 4,
+                borderRadius: 10,
+              }}>
+              <Image
+                source={require("../Assets/image/logo-google.png")}
+                style={{height: 36, width: 36, marginRight: 8}}
+                resizeMode="contain"
+              />
+              <Text>Phone Number</Text>
+            </TouchableOpacity>
           </View>
           <View
             style={{

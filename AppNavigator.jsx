@@ -8,6 +8,7 @@ import About from "./src/Pages/About";
 import Login from "./src/Pages/Login";
 import Welcome from "./src/Pages/Welcome";
 import GoogleUserProfile from "./src/Pages/GoogleUserProfile";
+import PhoneSignIn from "./src/Components/PhoneSignIn";
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +34,7 @@ const AppNavigator = () => {
           />
           <Stack.Screen name="About" component={About} />
           <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="PhoneSignIn" component={PhoneSignIn} />
           <Stack.Screen
             name="GoogleUserProfile"
             component={GoogleUserProfile}
