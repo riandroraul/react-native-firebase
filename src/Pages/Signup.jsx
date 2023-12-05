@@ -23,6 +23,9 @@ const Signup = ({navigation}) => {
   const context = useContext(UserContext);
   const [onClick, setOnClick] = useState(false);
   const [data, setData] = useState({});
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   async function getUserFBCredential() {
     setOnClick(!onClick);
@@ -36,6 +39,15 @@ const Signup = ({navigation}) => {
     setOnClick(!onClick);
   }
 
+  const onSignup = async() => {
+    try {
+      const response = await axios.post('https://api-books-app.cyclic.app/tambahUser', { nama: username, email, password})
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);  
+    }
+  }
+
   const onClickSignInGoogle = async () => {
     const result = await signInWithGoogle();
     console.log("result : ", result);
@@ -46,22 +58,9 @@ const Signup = ({navigation}) => {
   };
 
   useEffect(() => {
-    // onClick ? getUserFBCredential() : undefined;
-    // if (AsyncStorage.getItem("googleSignIn")) {
-    //   navigation.dispatch(StackActions.replace("GoogleUserProfile"));
-    // }
-    // if (Object.keys(data) !== 0) {
-    //   navigation.dispatch(StackActions.replace("GoogleUserProfile"));
-    // }
-    // console.log(AsyncStorage.getItem("googleSignIn"));
-    // console.log("useeffect: ", GoogleSignin.getTokens());
-    // console.log("useeffect: ", data);
   }, [data]);
 
   useEffect(() => {
-    // AsyncStorage.getItem("googleSignIn", (err, val) => {
-    //   navigation.dispatch(StackActions.replace("GoogleUserProfile"));
-    // });
   }, []);
 
   const [isChecked, setIsChecked] = useState(false);
@@ -81,13 +80,17 @@ const Signup = ({navigation}) => {
           <Text style={{fontSize: 16, color: COLORS.black, marginBottom: 10}}>
             Connect with your friend today
           </Text>
-          <TextinputComp2 title="Username" placeholder="Enter your name" />
+          <TextinputComp2 onChangeValue={(val) => setUsername(val)} inputValue={username} title="Username" placeholder="Enter your name" />
           <TextinputComp2
+            inputValue={email}
+            onChangeValue={(val) => setEmail(val)}
             title="Email address"
             placeholder="Enter your email address"
             keyboardType="email-address"
           />
           <TextinputComp2
+            onChangeValue={(val) => setPassword(val)}
+            inputValue={password}
             title="Password"
             placeholder="Enter your password"
             password={true}
@@ -116,7 +119,7 @@ const Signup = ({navigation}) => {
               marginTop: 18,
               marginBottom: 4,
             }}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onSignup}>
               <Text
                 style={{
                   color: COLORS.white,

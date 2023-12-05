@@ -6,6 +6,7 @@ import {
   Pressable,
   ScrollView,
 } from "react-native";
+import axios from "axios";
 import {useEffect, useState} from "react";
 import {SafeAreaView} from "react-native-safe-area-context";
 import COLORS from "../Constants/color";
@@ -22,6 +23,13 @@ const Login = ({navigation}) => {
   // }, []);
 
   const [isChecked, setIsChecked] = useState(false);
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const onLogin = async() => {
+    const response = await axios.post('https://api-books-app.cyclic.app/login', {email, password})
+    console.log(response.data);
+  }
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
       <ScrollView>
@@ -39,11 +47,15 @@ const Login = ({navigation}) => {
             Hello again you have been missed!
           </Text>
           <TextinputComp2
+            inputValue={email}
+            onChangeValue={(val) => setEmail(val)}
             title="Email address"
             placeholder="Enter your email address"
             keyboardType="email-address"
           />
           <TextinputComp2
+            inputValue={password}
+            onChangeValue={(val) => setPassword(val)}
             title="Password"
             placeholder="Enter your password"
             password={true}
@@ -70,7 +82,7 @@ const Login = ({navigation}) => {
               marginTop: 18,
               marginBottom: 4,
             }}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onLogin}>
               <Text
                 style={{
                   color: COLORS.white,

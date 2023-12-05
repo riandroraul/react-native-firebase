@@ -10,6 +10,8 @@ const TextinputComp2 = ({
   placeholder,
   keyboardType = 'default',
   password,
+  inputValue,
+  onChangeValue
 }) => {
   const [isShownPassword, setIsShownPassword] = useState(false);
   return (
@@ -29,6 +31,8 @@ const TextinputComp2 = ({
           paddingLeft: 22,
         }}>
         <TextInput
+          value={inputValue}
+          onChangeText={onChangeValue}
           placeholder={placeholder}
           placeholderTextColor={COLORS.black}
           keyboardType={keyboardType}
